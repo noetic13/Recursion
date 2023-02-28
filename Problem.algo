@@ -9,9 +9,9 @@ BEGIN
     IF (str.length<=1) THEN
         Write("the word you entered is a palindrome")
 
-    ELSE_IF (str.length/2=1) THEN
+    ELSE_IF (str.length%2=1) THEN
         i:=0;
-        WHILE (i<= (str.length-2)/2) DO
+        WHILE (i<= (str.length-1)/2) DO
             IF (str[i] = str[str.length-i-1]) THEN
                 i:=i+1;
             ELSE
@@ -19,21 +19,7 @@ BEGIN
                 Break;  
             END_IF
         END_WHILE
-        IF (i=(str.length-2)/2) THEN
+        IF (i=(str.length-1)/2) THEN
             Write ("the word you entered is palindrome")
         END_IF
-    ELSE
-        j:=0;
-        WHILE (j<=(str.length-1)/2) DO
-            IF (str[j]=str[str.length-j-1]) THEN
-                j:=j+1;
-            ELSE
-                Write ("the word you entered is not palindrome");
-                Break;
-            END_IF
-        END_WHILE
-        IF (j=(str.length-1)/2) THEN
-            Write ("the word you entered is palindrome")
-        END_IF
-    END_IF
 END
